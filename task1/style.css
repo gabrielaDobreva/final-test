@@ -1,41 +1,100 @@
-* {
-  box-sizing: border-box;
+{
+    box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.6em;
+    font-family: sans-serif;
+    line-height: 1.6em;
 }
 
 .subtask {
-  margin: 20px 0;
-  border: 1px solid lightblue;
-  border-radius: 8px;
-  padding: 16px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
 }
 
 ul > li {
-  list-style-type: none;
-  padding: 20px;
-  float: left;
-  background-color: lightpink;
-  width: calc(100%/6);
+    list-style-type: none;
+    padding: 20px;
+    float: left;
+    background-color: lightpink;
+    width: calc(100%/6);
 }
 
 ul > li img {
-  margin: 0 auto;
-  display: block;
+    margin: 0 auto;
+    display: block;
 }
 
 .clearfix {
-  clear: both;
+    clear: both;
 }
 
+
 /* Вашият CSS от тук надолу */
+
+#subtask2 > ul > li:nth-child(even) {
+    background-color: lightblue;
+}
+
+#subtask3 > ul > li:hover {
+    background-color: lightblue;
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
+
+#subtask4 > ul > li {
+    position: relative;
+}
+
+#subtask4 > ul > li:after {
+    content: " ";
+    z-index: 10;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#subtask5 > ul > li {
+    position: relative;
+}
+
+#subtask5 > ul > li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+#subtask5 ul li:hover:after {
+    content: "IMAGINE THAT!";
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    ul > li {
+        width: calc(100%/2)
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    ul > li {
+        width: calc(100%/3);
+    }
+}
